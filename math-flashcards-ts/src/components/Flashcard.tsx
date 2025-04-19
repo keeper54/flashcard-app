@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Card, TextField, Typography, CardContent } from '@mui/material';
+import { Card, TextField, Typography, CardContent, Divider, Grid, Box } from '@mui/material';
 import { MathProblem } from '../utils/mathUtils';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 
 interface FlashcardProps {
   problem: MathProblem;
@@ -28,14 +30,41 @@ const Flashcard: React.FC<FlashcardProps> = ({ problem, onAnswerSubmit }) => {
       }
     }
   };
-
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#fff',
+    padding: theme.spacing(1),
+    textAlign: 'right',
+    color: 'black'
+  }));
   return (
-    <Card variant="outlined" sx={{ minWidth: 300, padding: 3 }}>
-      <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography variant="h5" component="div" mb={2}>
-          {problem.problem} = ?
-        </Typography>
-        <TextField
+    <Box sx={{ width: '100%', maxWidth: 800, bgcolor: 'yellow' }}>
+    <Grid container maxWidth={800} width={800} spacing={0} rowSpacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Grid size={3}>
+      &nbsp;
+      </Grid>
+      <Grid size={9}>
+        <Typography variant="h2" component="div" mb={2} align='left'>
+            {problem.num1}
+          </Typography>
+      </Grid>
+      <Grid size={3}>
+          <Typography variant="h2" width={100} component="div" mb={2} align='left'>
+            {problem.operation}
+          </Typography>
+      </Grid>
+      <Grid size={9}>
+          <Typography variant="h2" width={100} component="div" mb={2} align='left'>
+            {problem.num2}
+          </Typography>
+      </Grid>
+      <Grid size={12}>
+          <Typography variant="h2" width={100} component="div" mb={2} align='left'>
+            <Divider sx={{ width: '100%', height: 1, backgroundColor: 'black' }} />
+          </Typography>
+      </Grid>
+      <Grid size={12}>
+          <Typography variant="h2" component="div" mb={2} align='left'>
+          <TextField
           inputRef={inputRef}
           label="Your Answer"
           variant="outlined"
@@ -45,8 +74,10 @@ const Flashcard: React.FC<FlashcardProps> = ({ problem, onAnswerSubmit }) => {
           onKeyDown={handleKeyDown}
           sx={{ width: '100%', maxWidth: 200 }}
         />
-      </CardContent>
-    </Card>
+          </Typography>
+      </Grid>
+    </Grid>
+    </Box>
   );
 };
 

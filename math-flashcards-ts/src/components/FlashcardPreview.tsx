@@ -23,7 +23,7 @@ const FlashcardPreview: React.FC<FlashcardPreviewProps> = ({ problem, index, isC
       }}
     >
       <CardActionArea>
-        <Typography variant="h6">{problem.problem}</Typography>
+        <Typography variant="h6">{problem.num1} {problem.operation} {problem.num2} </Typography>
       </CardActionArea>
     </Card>
   );
