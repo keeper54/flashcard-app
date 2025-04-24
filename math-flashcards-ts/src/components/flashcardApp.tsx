@@ -51,26 +51,26 @@ const isFinished = endTime !== null;
 
 
 return (
-<Box sx={{ width: '100%', maxWidth: 1500, bgcolor: 'background.paper' }}>
-<Grid container spacing={2}>
+<>
+<Grid container spacing={0}>
 
-  <Grid container spacing={2} width={'75%'} height={'100vh'} margin={'auto'} alignItems={'stretch'} justifyContent={'flex-start'} direction={'row'}>
+  <Grid container spacing={1} width={'65%'} height={'100vh'} margin={10} padding={10}>
         {problems.map((problem, index) => (
-            <Grid size={1} className="flashcard-preview" key={index}>
-              <Item key={index} className="flashcard-item">
+            <Grid size={1} key={index} boxShadow={2} padding={1} margin={1}>
+              <div key={index} className="flashcard-item">
                 <FlashcardPreview
                 index={index}
                 problem={problem}
                 isCurrent={index === currentProblemIndex}
                 />
-              </Item> 
+              </div> 
             </Grid>
         ))}
   
 
   </Grid>
 
-  <Grid container spacing={1} width={'20%'} height={'100vh'}>
+  <Grid container spacing={1} width={'20%'}>
     <Grid size={10}>
       <Item>
         {isFinished ? (
@@ -89,7 +89,7 @@ return (
   </Grid>
 </Grid>
 
-</Box>
+</>
 )
 }
 

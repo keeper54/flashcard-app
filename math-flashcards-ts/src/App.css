@@ -37,10 +37,28 @@
   }
 } */
 .flashcard-preview .flashcard-item {
-  justify-content: center;
-  align-items: center;
   font-size: calc(18px + 2vmin);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color:black;
   transition: transform 0.2s;
+}
+
+.preview-holder {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.num1 {
+float:left;
+width:100%;
+text-align: right;
+
+}
+.num2, .operation {
+float:left;
+width:50%;
+text-align: right;
+border-bottom:1px solid black;
 }

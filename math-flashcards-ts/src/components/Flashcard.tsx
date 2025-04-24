@@ -37,8 +37,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ problem, onAnswerSubmit }) => {
     color: 'black'
   }));
   return (
-    <Box sx={{ width: '100%', maxWidth: 800, bgcolor: 'yellow' }}>
-    <Grid container maxWidth={800} width={800} spacing={0} rowSpacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Grid container maxWidth={800} width={400} spacing={0} rowSpacing={2} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Grid size={3}>
       &nbsp;
       </Grid>
@@ -63,7 +62,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ problem, onAnswerSubmit }) => {
           </Typography>
       </Grid>
       <Grid size={12}>
-          <Typography variant="h2" component="div" mb={2} align='left'>
+
           <TextField
           inputRef={inputRef}
           label="Your Answer"
@@ -74,10 +73,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ problem, onAnswerSubmit }) => {
           onKeyDown={handleKeyDown}
           sx={{ width: '100%', maxWidth: 200 }}
         />
-          </Typography>
+
       </Grid>
     </Grid>
-    </Box>
   );
 };
 
